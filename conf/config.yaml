@@ -4,3 +4,15 @@
 defaults:
   - base_config
   - _self_
+
+
+# potential connection parameters:
+# cluster_name: "..." - name of an all-purpose cluster for DB Connect
+# profile: "..." - Databricks CLI profie to be used 
+
+# potential data parameters (used both by create-table and frontend app)
+
+# image_table:
+#   catalog: "..."
+#   database: "..."
+#   table: "..."

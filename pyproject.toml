@@ -18,14 +18,21 @@ databricks-sdk = "^0.1.7"
 dash = "^2.9.3"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+ruff = "^0.0.267"
+isort = "^5.12.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 create-table = 'db_connect_v2_image_classification.create_table:entrypoint'
-frontend = 'db_connect_v2_image_classification.app:entrypoint'
 
 
 [tool.black]
+line-length = 120
+
+[tool.ruff]
 line-length = 120

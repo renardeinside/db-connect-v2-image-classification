@@ -1,5 +1,6 @@
-from dataclasses import dataclass, MISSING, field
+from dataclasses import dataclass, field
 from typing import Optional
+
 from databricks.sdk import WorkspaceClient
 
 
@@ -20,6 +21,7 @@ class AppConfig:
     cluster_id: str = field(init=False)
     image_table: ImageTableConfig = field(default_factory=ImageTableConfig)
     profile: Optional[str] = "DEFAULT"
+    debug: Optional[bool] = True
 
     # defines is we want to overwite the table, fail when it exists or append data into it
     table_saving_mode: Optional[str] = "error"

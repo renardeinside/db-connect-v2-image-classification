@@ -1,6 +1,13 @@
 body {
+    /* setup a nice gradient background */
     background-image: linear-gradient(to bottom left, #240b36, #6f1625);
     color: whitesmoke;
+    /* font settings */
     font-family: 'Inter', sans-serif;
     font-family: 'Noto Sans', sans-serif;
+}
+
+/* extra coloring for links, with !important to override Tailwind defaults */
+a {
+    color: palevioletred !important;
 }

@@ -1,9 +1,13 @@
 from dash import dcc, html
 
+blogpost_link = (
+    "https://www.databricks.com/blog/2022/07/07/introducing-spark-connect-the-power-of-apache-spark-everywhere.html"
+)
+
 header = dcc.Markdown(
-    "## Image labeling app, built with [Dash](https://plotly.com/dash/) "
-    "and [DB Connect V2](https://www.databricks.com/blog/2022/07/07/introducing-spark-connect-the-power-of-apache-spark-everywhere.html) 🔥",
-    className="text-4xl mb-2",
+    "## Image classification app, built with [Dash](https://plotly.com/dash/) "
+    f"and [DB Connect V2]({blogpost_link}) 🔥",
+    className="text-3xl mb-2",
 )
 
 
@@ -18,7 +22,7 @@ random_btn = html.Button(
     className="btn btn-primary btn-lg mt-5",
 )
 
-nav_container = html.Div(children=[random_btn], style={"display": "flex", "justify-content": "center"})
+nav_container = html.Div(children=[random_btn], className="flex justify-center")
 
 confirm_button = dcc.Loading(
     id="submit-loading",
@@ -74,6 +78,7 @@ def data_container(class_choices):
                                     dcc.Markdown(id="image_id", className="text-sm text-sky-500"),
                                 ]
                             ),
+                            html.Div(className="divider"),
                             class_selector(class_choices),
                         ],
                     )

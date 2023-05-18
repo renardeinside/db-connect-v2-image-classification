@@ -1,8 +1,9 @@
-from dash import Dash, Input, Output, State, ctx, dcc, html
 from random import choice
+
 import plotly.express as px
+from dash import Dash, Input, Output, State
+
 from db_connect_v2_image_classification.frontend.crud import DataOperator
-from typing import List
 
 
 def prepare_callbacks(app: Dash, op: DataOperator):

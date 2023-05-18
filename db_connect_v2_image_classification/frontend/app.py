@@ -1,23 +1,22 @@
+import logging
 from random import choice
 
-from dash import Dash, Input, Output, State, ctx, dcc, html
-from db_connect_v2_image_classification.configs import AppConfig
-from db_connect_v2_image_classification.css_utils import external_stylesheets
-from db_connect_v2_image_classification.css_utils import external_scripts
+from dash import Dash, dcc, html
 
-from db_connect_v2_image_classification.main_wrapper import main_wrapper
-from db_connect_v2_image_classification.frontend.components import header, guideline, nav_container, data_container
-from db_connect_v2_image_classification.frontend.crud import DataOperator
+from db_connect_v2_image_classification.configs import AppConfig
+from db_connect_v2_image_classification.css_utils import external_scripts, external_stylesheets
 from db_connect_v2_image_classification.frontend.callbacks import prepare_callbacks
-from typing import List
-import logging
+from db_connect_v2_image_classification.frontend.components import data_container, guideline, header, nav_container
+from db_connect_v2_image_classification.frontend.crud import DataOperator
+from db_connect_v2_image_classification.main_wrapper import main_wrapper
 
 logger = logging.getLogger("frontend_app")
 logger.setLevel(logging.INFO)
 
 
 def prepare_layout(op: DataOperator) -> html.Div:
-    return html.Div(
+    logger.info("Preparing the layout")
+    layout = html.Div(
         children=[
             header,
             guideline,
@@ -28,6 +27,8 @@ def prepare_layout(op: DataOperator) -> html.Div:
         className="p-5",
         style={"height": "100vh"},
     )
+    logger.info("layout prepared")
+    return layout
 
 
 @main_wrapper()
@@ -43,7 +44,7 @@ def entrypoint(cfg: AppConfig):
     logger.info("Data operator loaded successfully")
     app.layout = prepare_layout(op)
     prepare_callbacks(app, op)
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=cfg.debug, host="0.0.0.0")
 
 
 if __name__ == "__main__":
