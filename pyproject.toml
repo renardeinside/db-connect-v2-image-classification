@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "db-connect-v2-image-classification"
+version = "0.1.0"
+description = ""
+authors = ["renardeinside <polarpersonal@gmail.com>"]
+readme = "README.md"
+packages = [{include = "db_connect_v2_image_classification"}]
+
+include = [
+    {path = "conf"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+databricks-connect = "13.*"
+hydra-core = "^1.3.2"
+databricks-sdk = "^0.1.7"
+dash = "^2.9.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+create-table = 'db_connect_v2_image_classification.create_table:entrypoint'
+frontend = 'db_connect_v2_image_classification.app:entrypoint'
+
+
+[tool.black]
+line-length = 120

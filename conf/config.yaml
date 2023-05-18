@@ -1,0 +1,6 @@
+# this order or defaults means that we first take the base_config (defined in the dataclasses)
+# but any overrides coming from this file would prevail
+# any overrides coming from the CLI arguments would prevail over any configurations provided here
+defaults:
+  - base_config
+  - _self_
