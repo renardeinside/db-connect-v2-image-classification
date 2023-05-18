@@ -1,4 +1,4 @@
-# Image classification app, built with Databricks DB Connect "V2" and Dash
+# Image classification app, built with Databricks DB Connect "V2" and Dash 🔥
 
 ## Prerequisites
 
@@ -37,12 +37,12 @@ poetry run python \
 
 ## Technologies used
 
-- Databricks and DB Connect V2
-- `hydra` for configuration management
-- `poetry` for package management and project setup
-- `black` for code formatting
-- `ruff` for linting
-- `isort` for import analysis
-- Dash by Plotly as frontend framework
-- Tailwind for CSS settings
-- Daisy UI for some ready-to-use components
+- [Databricks and DB Connect V2](https://www.databricks.com/blog/2023/04/18/use-databricks-anywhere-databricks-connect-v2.html)
+- [`hydra`](https://hydra.cc/docs/intro/) for configuration management
+- [`poetry`](https://python-poetry.org/) for package management and project setup
+- [`black`](https://github.com/psf/black) for code formatting
+- [`ruff`](https://github.com/charliermarsh/ruff) for linting
+- [`isort`](https://github.com/PyCQA/isort) for import analysis
+- [Dash by Plotly](https://plotly.com/) as frontend framework
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Daisy UI](https://daisyui.com/) for ready-to-use components
