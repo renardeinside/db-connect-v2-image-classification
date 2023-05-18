@@ -4,7 +4,7 @@ from random import choice
 from dash import Dash, dcc, html
 
 from db_connect_v2_image_classification.configs import AppConfig
-from db_connect_v2_image_classification.css_utils import external_scripts, external_stylesheets
+from db_connect_v2_image_classification.frontend.css_utils import external_scripts, external_stylesheets
 from db_connect_v2_image_classification.frontend.callbacks import prepare_callbacks
 from db_connect_v2_image_classification.frontend.components import data_container, guideline, header, nav_container
 from db_connect_v2_image_classification.frontend.crud import DataOperator
