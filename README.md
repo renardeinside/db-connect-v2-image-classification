@@ -16,7 +16,7 @@
 poetry install
 ```
 
-2. Create a table with image metadata:
+2. Create a table with image metadata (check the possible arguments in the `conf/config.yaml` file):
 ```bash
 poetry run frontend \
     --config-path="${PWD}/conf" \
